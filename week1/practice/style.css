@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'ChosunGs';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1{
+    color: white;
+    background: #000;
+    font-family: 'ChosunGs';
+    padding: 30px;
+
+}
+
+img{
+    width: 100%;
+}
+
+.content{
+    font-size: 24px;
+
+}
+
+.list{
+    padding: 20px;
+    background-color: skyblue;
+}
+
+.mainBtn{
+    width: 500px;
+    height: 80px;
+    margin: 30px;
+    font-size: 50px;
+}
