@@ -12,6 +12,10 @@
       font-family: 'SUIT Variable', sans-serif;
   }
 
+body{
+    background-color: black;
+}
+
   .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -46,6 +50,7 @@
     position :fixed; 
     z-index: 999;
     width: 100%;
+    margin-top:30px;
 }
 
 .logo{
@@ -118,3 +123,102 @@
 .homeBtn>span{
     margin-right: 10px;
 }
+
+.banner{
+    margin-right: 20px;
+    width: 200px;
+    height: 240px;
+}
+
+/* .banner:hover{
+    width:210px;
+    height:230px;
+} */
+
+.bannerList{
+    display: flex;
+    animation: roll 30s linear infinite;
+}
+
+/* 이걸 더 효율적으로 하는 방법이 있을 것 같은데 모르겠다... 일단 반복해서 씀 */
+
+.banner.img1{
+    background: url(./img/infinity/1.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.banner.img2{
+    background: url(./img/infinity/2.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.banner.img3{
+    background: url(./img/infinity/3.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.banner.img4{
+    background: url(./img/infinity/4.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.banner.img5{
+    background: url(./img/infinity/5.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.banner.img6{
+    background: url(./img/infinity/6.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.banner.img7{
+    background: url(./img/infinity/7.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.banner.img8{
+    background: url(./img/infinity/8.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.banner.img9{
+    background: url(./img/infinity/9.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.banner.img10{
+    background: url(./img/infinity/10.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.infinityBanner{
+    padding: 40px;
+}
+
+.infinityBanner>p{
+    color:white;
+    font-family: 'SUIT Variable';
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.infinityGallery{
+    margin-top:10px;
+    display: flex;
+}
+
+  /* 첫 번째 배너 리스트가 끝나면 뒤에 바로 두 번째 배너 리스트가 붙도록 설정 */
+  .n1:last-child {
+    animation-delay: 30s;
+  }
+
+  /* 롤링 애니메이션 정의 */
+  @keyframes roll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
