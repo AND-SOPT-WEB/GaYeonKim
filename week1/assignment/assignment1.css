@@ -8,6 +8,8 @@
       url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
       url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
       url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+
+      font-family: 'SUIT Variable', sans-serif;
   }
 
   .material-icons {
@@ -35,11 +37,12 @@
     font-feature-settings: 'liga';
   }
 
+
 .header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: cadetblue;
+    color: white;
     position :fixed; 
     z-index: 999;
     width: 100%;
@@ -53,11 +56,17 @@
 .left{
     display: flex;
     flex-direction: row;
+    margin-left: 100px;
 }
 
 .right{
     display: flex;
     align-items: center;
+    margin-right: 100px;
+}
+
+.gnb{
+    display: flex;
 }
 
 .gnbBtn{
@@ -66,4 +75,46 @@
 
 .right>.material-icons{
     padding: 0 10px;
+    color: white;
+}
+
+.homeBanner{
+    background: url(./img/home_img.png) no-repeat center;
+    background-size: cover;
+    height: 1000px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    flex-direction: column;
+    padding: 0 80px 40px 0;
+}
+
+.sentence{
+    background-color: white;
+    color: skyblue;
+    font-size: 30px;
+    font-family: 'SUIT Variable';
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.homeBtn{
+    display: flex;
+    align-items: center;
+    background-color: rgba(154,154,154,60%);
+    color:white;
+    padding: 10px;
+    font-family: 'SUIT Variable';
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.homeBtn:hover{
+    background-color: rgba(73, 73, 73, 0.6);
+}
+
+.homeBtn>span{
+    margin-right: 10px;
 }
