@@ -124,101 +124,164 @@ body{
     margin-right: 10px;
 }
 
-.banner{
-    margin-right: 20px;
-    width: 200px;
-    height: 240px;
-}
-
-/* .banner:hover{
-    width:210px;
-    height:230px;
-} */
-
-.bannerList{
-    display: flex;
-    animation: roll 30s linear infinite;
-}
-
-/* 이걸 더 효율적으로 하는 방법이 있을 것 같은데 모르겠다... 일단 반복해서 씀 */
-
-.banner.img1{
-    background: url(./img/infinity/1.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.banner.img2{
-    background: url(./img/infinity/2.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.banner.img3{
-    background: url(./img/infinity/3.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.banner.img4{
-    background: url(./img/infinity/4.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.banner.img5{
-    background: url(./img/infinity/5.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.banner.img6{
-    background: url(./img/infinity/6.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.banner.img7{
-    background: url(./img/infinity/7.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.banner.img8{
-    background: url(./img/infinity/8.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.banner.img9{
-    background: url(./img/infinity/9.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.banner.img10{
-    background: url(./img/infinity/10.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.infinityBanner{
-    padding: 40px;
-}
-
-.infinityBanner>p{
+div>p{
     color:white;
     font-family: 'SUIT Variable';
     font-size: 30px;
     padding-bottom: 20px;
 }
 
+/* 무한 롤링 배너 스타일 */
+.infinityBanner{
+    padding: 40px;
+}
+
 .infinityGallery{
     margin-top:10px;
     display: flex;
+    overflow: hidden;
+    width:auto;
 }
 
-  /* 첫 번째 배너 리스트가 끝나면 뒤에 바로 두 번째 배너 리스트가 붙도록 설정 */
-  .n1:last-child {
-    animation-delay: 30s;
-  }
+.bannerI{
+    margin-right: 20px;
+    width: 200px;
+    height: 240px;
+}
+/* 
+.banner:hover{
+    width:250px;
+    height:250px;
+} */
 
-  /* 롤링 애니메이션 정의 */
-  @keyframes roll {
+.bannerList{
+    display: flex;
+}
+
+/* 이걸 더 효율적으로 하는 방법이 있을 것 같은데 모르겠다... 일단 반복해서 씀 */
+.bannerI.img1{
+    background: url(./img/infinity/1.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img2{
+    background: url(./img/infinity/2.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img3{
+    background: url(./img/infinity/3.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img4{
+    background: url(./img/infinity/4.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img5{
+    background: url(./img/infinity/5.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img6{
+    background: url(./img/infinity/6.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img7{
+    background: url(./img/infinity/7.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img8{
+    background: url(./img/infinity/8.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img9{
+    background: url(./img/infinity/9.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img10{
+    background: url(./img/infinity/10.jpg) no-repeat center;
+    background-size: cover;
+}
+
+/* 첫 번째 배너 리스트가 끝나면 뒤에 바로 두 번째 배너 리스트가 붙도록 설정 */
+.n1 {
+    animation: roll 30s linear infinite;
+    animation-delay: 0s;
+}
+
+.n2 {
+    animation: roll 30s linear infinite;
+    animation-delay: 30s; /* 애니메이션 타임이 30초니까, 30초 뒤에 시작 */
+}  
+
+/* 롤링 애니메이션 정의 : 0%일때는 X값 0, 100%일 때는 X값이 -100%(완전히 왼쪽 화면 밖으로 이동)*/
+@keyframes roll {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
-  }
+}
+
+/* 스크롤 배너 스타일 */
+.scrollBanner{
+    padding:40px;
+}
+
+.scrollGallery{
+    margin-top:10px;
+    display: flex;
+    width: auto;
+    /* 오버플로우: 영역보다 큰거 어떻게 처리할건지? */
+    overflow: auto;
+}
+
+.scrollGallery::-webkit-scrollbar{
+    display:none;
+}
+
+.bannerS{
+    margin-right: 20px;
+    width: 200px;
+    height: 240px;
+    border-radius: 10px;
+}
+
+.bannerS.img1{
+    background: url(./img/scroll/1.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img2{
+    background: url(./img/scroll/2.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img3{
+    background: url(./img/scroll/3.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img4{
+    background: url(./img/scroll/4.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img5{
+    background: url(./img/scroll/5.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img6{
+    background: url(./img/scroll/6.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img7{
+    background: url(./img/scroll/7.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img8{
+    background: url(./img/scroll/8.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img9{
+    background: url(./img/scroll/9.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img10{
+    background: url(./img/scroll/10.jpg) no-repeat center;
+    background-size: cover;
+}
