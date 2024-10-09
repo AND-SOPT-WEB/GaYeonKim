@@ -147,12 +147,12 @@ div>p{
     margin-right: 20px;
     width: 200px;
     height: 240px;
+    transition: transform 0.3s ease; /*transform을 할 때, 0.3초로 ease 한다.*/
 }
-/* 
-.banner:hover{
-    width:250px;
-    height:250px;
-} */
+
+.bannerI:hover{
+    transform: scale(1.2); /* 배너를 1.2배 확대하는 속성*/
+}
 
 .bannerList{
     display: flex;
@@ -231,7 +231,7 @@ div>p{
     display: flex;
     width: auto;
     /* 오버플로우: 영역보다 큰거 어떻게 처리할건지? */
-    overflow: auto;
+    overflow: scroll;
 }
 
 .scrollGallery::-webkit-scrollbar{
