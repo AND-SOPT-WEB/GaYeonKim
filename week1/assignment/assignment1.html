@@ -15,7 +15,7 @@
         <div class="left">
             <img src="./img/sopt_logo_white.svg" alt="솝트 로고" class="logo">
             <!-- 메뉴바의 영역 -->
-             
+
             <div class="gnb"> 
                 <div class="gnbBtn">안녕</div>
                 <div class="gnbBtn">반가워</div>
@@ -75,21 +75,29 @@
     <!-- 스크롤 배너 시작 -->
     <div class="scrollBanner">
         <p>가연의 전통주 추천</p>
-        <div class="scrollGallery">
-            <ul class="bannerList n3">
-                <li class="bannerS img1"></li>
-                <li class="bannerS img2"></li>
-                <li class="bannerS img3"></li>
-                <li class="bannerS img4"></li>
-                <li class="bannerS img5"></li>
-                <li class="bannerS img6"></li>
-                <li class="bannerS img7"></li>
-                <li class="bannerS img8"></li>
-                <li class="bannerS img9"></li>
-                <li class="bannerS img10"></li>
-            </ul>
+        <div class="scrollWrapper">
+            <a href="#prev" class="scrollBtn leftBtn">
+                <span class="material-icons">arrow_back</span>
+            </a>
+            <a href="#next" class="scrollBtn rightBtn">
+                <span class="material-icons">arrow_forward</span>
+            </a>
+            <div class="scrollGallery">
+                <ul class="bannerList n3">
+                    <li id="prev" class="bannerS img1"></li>
+                    <li class="bannerS img2"></li>
+                    <li class="bannerS img3"></li>
+                    <li class="bannerS img4"></li>
+                    <li class="bannerS img5"></li>
+                    <li class="bannerS img6"></li>
+                    <li class="bannerS img7"></li>
+                    <li class="bannerS img8"></li>
+                    <li class="bannerS img9"></li>
+                    <li id="next" class="bannerS img10"></li>
+                </ul>
+            </div>
         </div>
-
+        
     </div>
 
 </body>

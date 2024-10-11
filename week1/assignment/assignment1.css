@@ -226,12 +226,17 @@ div>p{
     padding:40px;
 }
 
-.scrollGallery{
+.scrollWrapper{
     margin-top:10px;
+    position: relative
+}
+
+.scrollGallery{
     display: flex;
     width: auto;
     /* 오버플로우: 영역보다 큰거 어떻게 처리할건지? */
     overflow: scroll;
+    scroll-behavior: smooth;
 }
 
 .scrollGallery::-webkit-scrollbar{
@@ -285,3 +290,20 @@ div>p{
     background: url(./img/scroll/10.jpg) no-repeat center;
     background-size: cover;
 }
+
+.scrollBtn{
+    background: rgba(49, 49, 49, 0.556);
+    color: white;
+    height: 240px;
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    text-decoration-line: none;
+}
+
+.rightBtn{
+    right: 0px;
+}
+
+/* 전체로 감싸서 flex 속성을 준 뒤 위에 얹으려고 했는데 그러면 가로 스크롤이 안되더라... */
