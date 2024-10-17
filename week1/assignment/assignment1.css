@@ -1,0 +1,322 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular'),
+      url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+      url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+      url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+
+      font-family: 'SUIT Variable', sans-serif;
+  }
+
+body{
+    background-color: black;
+}
+
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    position :fixed; 
+    z-index: 10;
+    width: 100%;
+    box-sizing: border-box; /* padding값 포함해서 width 100%로 꽉차게 box-sizing 설정*/
+    padding: 30px 100px 0; /* header에서 요소들 원하는 위치에 두기 위해 padding 설정*/
+}
+
+.logo{
+    width:100px;
+    padding-right: 20px;
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+}
+
+.gnb{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.gnbBtn{
+    color: white;
+    text-decoration-line: none;
+}
+
+.gnbBtn:visited{
+    color: white;
+}
+
+.right>.material-icons{
+    padding: 0 10px;
+    color: white;
+}
+
+.homeBanner{
+    background: url(./img/home_img.png) no-repeat center;
+    background-size: cover;
+    height: 1000px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 80px 40px 0;
+}
+
+.sentence{
+    background-color: white;
+    color: skyblue;
+    font-size: 30px;
+    font-family: 'SUIT Variable';
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.homeBtn{
+    display: flex;
+    align-items: center;
+    background-color: rgba(154,154,154,60%);
+    color:white;
+    padding: 10px;
+    font-family: 'SUIT Variable';
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.homeBtn:hover{
+    background-color: rgba(73, 73, 73, 0.6);
+}
+
+.homeBtn>span{
+    margin-right: 10px;
+}
+
+div>h2{
+    color:white;
+    font-family: 'SUIT Variable';
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+/* 무한 롤링 배너 스타일 */
+.infinityBanner{
+    padding: 40px;
+}
+
+.infinityGallery{
+    display: flex;
+    overflow: hidden;
+    width:auto;
+}
+
+.bannerList{
+    display: flex;
+    /* flex로 레이아웃을 잡았기 때문에 gap을 활용하면 더 좋음 */
+    gap: 20px;
+    margin-right: 20px;
+
+}
+
+.bannerList img{
+    width: 15rem;
+    height: 20rem;
+    object-fit: cover;
+    transition: transform 0.3s ease; /*transform을 할 때, 0.3초로 ease 한다.*/
+}
+
+.bannerList img:hover{
+    transform: scale(1.2); /* 배너를 1.2배 확대하는 속성*/
+}
+
+/* 이걸 더 효율적으로 하는 방법이 있을 것 같은데 모르겠다... 일단 반복해서 씀 */
+/* .bannerI.img1{
+    background: url(./img/infinity/1.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img2{
+    background: url(./img/infinity/2.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img3{
+    background: url(./img/infinity/3.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img4{
+    background: url(./img/infinity/4.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img5{
+    background: url(./img/infinity/5.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img6{
+    background: url(./img/infinity/6.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img7{
+    background: url(./img/infinity/7.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img8{
+    background: url(./img/infinity/8.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img9{
+    background: url(./img/infinity/9.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerI.img10{
+    background: url(./img/infinity/10.jpg) no-repeat center;
+    background-size: cover;
+} */
+
+/* 첫 번째 배너 리스트가 끝나면 뒤에 바로 두 번째 배너 리스트가 붙도록 설정 */
+.n1 {
+    animation: roll 30s linear infinite;
+}
+
+.n2 {
+    animation: roll 30s linear infinite;
+}  
+
+/* 롤링 애니메이션 정의 : 0%일때는 X값 0, 100%일 때는 X값이 -100%(완전히 왼쪽 화면 밖으로 이동)*/
+@keyframes roll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* 스크롤 배너 스타일 */
+.scrollBanner{
+    padding:40px;
+}
+
+.scrollWrapper{
+    margin-top:10px;
+    position: relative
+}
+
+.scrollGallery{
+    display: flex;
+    width: auto;
+    /* 오버플로우: 영역보다 큰거 어떻게 처리할건지? */
+    overflow: scroll;
+    scroll-behavior: smooth;
+    gap: 20px;
+}
+
+.scrollGallery::-webkit-scrollbar{
+    display:none;
+}
+
+/* .scrollBannerList{
+    gap: 20px;
+    overflow: scroll;
+} */
+
+.scrollGallery img{
+    width: 15rem;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* 
+.bannerS.img1{
+    background: url(./img/scroll/1.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img2{
+    background: url(./img/scroll/2.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img3{
+    background: url(./img/scroll/3.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img4{
+    background: url(./img/scroll/4.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img5{
+    background: url(./img/scroll/5.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img6{
+    background: url(./img/scroll/6.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img7{
+    background: url(./img/scroll/7.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img8{
+    background: url(./img/scroll/8.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img9{
+    background: url(./img/scroll/9.jpg) no-repeat center;
+    background-size: cover;
+}
+.bannerS.img10{
+    background: url(./img/scroll/10.jpg) no-repeat center;
+    background-size: cover;
+} */
+
+.scrollBtn{
+    background: rgba(49, 49, 49, 0.556);
+    color: white;
+    height: 20rem;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    text-decoration-line: none;
+}
+
+.rightBtn{
+    right: 0px;
+}
+
+/* 전체로 감싸서 flex 속성을 준 뒤 위에 얹으려고 했는데 그러면 가로 스크롤이 안되더라... */
