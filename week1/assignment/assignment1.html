@@ -15,13 +15,12 @@
         <div class="left">
             <img src="./img/sopt_logo_white.svg" alt="솝트 로고" class="logo">
             <!-- 메뉴바의 영역 -->
-
-            <div class="gnb"> 
-                <div class="gnbBtn">안녕</div>
-                <div class="gnbBtn">반가워</div>
-                <div class="gnbBtn">아무거나</div>
-                <div class="gnbBtn">신난다</div>
-            </div>
+            <nav class="gnb">
+                <a href="#" class="gnbBtn">안녕</a>
+                <a href="#" class="gnbBtn">반가워</a>
+                <a href="#" class="gnbBtn">아무거나</a>
+                <a href="#" class="gnbBtn">신난다</a>
+            </nav>
         </div>
         <!-- 오른쪽 정렬된 아이콘들의 모임 -->
         <div class="right">
@@ -42,39 +41,37 @@
     </div>
     <!-- 무한 배너 시작 -->
     <div class="infinityBanner">
-        <p>내가 찍은 풍경 사진</p>
+        <h2>내가 찍은 풍경 사진</h2>
         <div class="infinityGallery">
-            <ul class="bannerList n1">
-                <li class="bannerI img1"></li>
-                <li class="bannerI img2"></li>
-                <li class="bannerI img3"></li>
-                <li class="bannerI img4"></li>
-                <li class="bannerI img5"></li>
-                <li class="bannerI img6"></li>
-                <li class="bannerI img7"></li>
-                <li class="bannerI img8"></li>
-                <li class="bannerI img9"></li>
-                <li class="bannerI img10"></li>
-            </ul>
-            <ul class="bannerList n2">
-                <li class="bannerI img1"></li>
-                <li class="bannerI img2"></li>
-                <li class="bannerI img3"></li>
-                <li class="bannerI img4"></li>
-                <li class="bannerI img5"></li>
-                <li class="bannerI img6"></li>
-                <li class="bannerI img7"></li>
-                <li class="bannerI img8"></li>
-                <li class="bannerI img9"></li>
-                <li class="bannerI img10"></li>
-            </ul>
+            <div class="bannerList n1">
+                <img src="img/infinity/1.jpg"/>
+                <img src="img/infinity/2.jpg"/>
+                <img src="img/infinity/3.jpg"/>
+                <img src="img/infinity/4.jpg"/>
+                <img src="img/infinity/5.jpg"/>
+                <img src="img/infinity/6.jpg"/>
+                <img src="img/infinity/7.jpg"/>
+                <img src="img/infinity/8.jpg"/>
+                <img src="img/infinity/9.jpg"/>
+                <img src="img/infinity/10.jpg"/>
+            </div>
+            <div class="bannerList n2">
+                <img src="img/infinity/1.jpg"/>
+                <img src="img/infinity/2.jpg"/>
+                <img src="img/infinity/3.jpg"/>
+                <img src="img/infinity/4.jpg"/>
+                <img src="img/infinity/5.jpg"/>
+                <img src="img/infinity/6.jpg"/>
+                <img src="img/infinity/7.jpg"/>
+                <img src="img/infinity/8.jpg"/>
+                <img src="img/infinity/9.jpg"/>
+                <img src="img/infinity/10.jpg"/>
+            </div>
         </div>
-
-
     </div>
     <!-- 스크롤 배너 시작 -->
     <div class="scrollBanner">
-        <p>가연의 전통주 추천</p>
+        <h2>가연의 전통주 추천</h2>
         <div class="scrollWrapper">
             <a href="#prev" class="scrollBtn leftBtn">
                 <span class="material-icons">arrow_back</span>
@@ -83,6 +80,18 @@
                 <span class="material-icons">arrow_forward</span>
             </a>
             <div class="scrollGallery">
+                <img id="prev" src="img/scroll/1.jpg"/>
+                <img src="img/scroll/2.jpg"/>
+                <img src="img/scroll/3.jpg"/>
+                <img src="img/scroll/4.jpg"/>
+                <img src="img/scroll/5.jpg"/>
+                <img src="img/scroll/6.jpg"/>
+                <img src="img/scroll/7.jpg"/>
+                <img src="img/scroll/8.jpg"/>
+                <img src="img/scroll/9.jpg"/>
+                <img id="next" src="img/scroll/10.jpg"/>
+            </div>
+            <!-- <div class="scrollGallery">
                 <ul class="bannerList n3">
                     <li id="prev" class="bannerS img1"></li>
                     <li class="bannerS img2"></li>
@@ -95,7 +104,7 @@
                     <li class="bannerS img9"></li>
                     <li id="next" class="bannerS img10"></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
         
     </div>
