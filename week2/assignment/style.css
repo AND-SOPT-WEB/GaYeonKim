@@ -1,0 +1,49 @@
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header{
+    background-color: rgb(154, 223, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    z-index: 10;
+    width: 100%;
+}
+
+a{
+    color: black;
+    text-decoration-line: none;
+}
+
+a:visited{
+    color: black;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+
+.filter{
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-title{
+    width: 3rem;
+}
+
+.filter-text-box{
+    display: flex;
+    flex-direction: row;
+}
