@@ -1,49 +1,228 @@
+@font-face {
+    font-family: 'SUIT Variable';
+    src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 html {
     font-size: 62.5%; /* 1rem = 10px */
+    font-family: 'SUIT Variable', sans-serif;
 }
 
 body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #DFF2EB;
 }
 
 header{
-    background-color: rgb(154, 223, 255);
+    position: relative;
+    background-color: #B9E5E8;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1rem;
+    align-items: center;
+    padding: 2rem 1.5rem;
     z-index: 10;
     width: 100%;
+    /* padding 사이즈까지 포함하려면 아래의 box-sizing이 필요함 */
+    box-sizing: border-box;
 }
 
 a{
     color: black;
     text-decoration-line: none;
+    font-size: 2rem;
 }
 
 a:visited{
     color: black;
 }
 
+header h1{
+    position: absolute;
+    font-size: 3rem;
+    /* 축을 가운데로 옮기고, 왼쪽 기준이었던걸 가운데로 옮김 */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header span{
+    font-size: 1.2rem;
+}
+
+/* 섹션 시작 */
+
 section{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 80%;
+    align-items: center;
+    width: auto;
+    padding-top: 2rem;
+    box-sizing: border-box;
+    gap: 4rem;
 }
 
-.filter{
+.filter-wrapper{
     display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #B9E5E8;
+    width: 100rem;
     flex-direction: column;
+    box-sizing: border-box;
+}
+
+.filter-searchbox {
+    display: grid;
+    grid-template-columns: 10rem 1fr 10rem 1fr 10rem 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+
+}
+
+.filter-text-box {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+}
+
+.filter-text-box.name {
+    grid-column-start: 1;
+    grid-column-end: 7;
+}
+.filter-text-box.english-name {
+    grid-column-start: 1;
+    grid-column-end: 7;
+}
+
+.filter-text-box.github {
+    grid-column: 1/3;
+}
+.filter-text-box.gender {
+    grid-column: 3/5;
+}
+.filter-text-box.role {
+    grid-column: 5/7;
+}
+
+.filter-text-box.week1 {
+    grid-column: 1/4;
+}
+.filter-text-box.week2 {
+    grid-column: 4/7;
 }
 
 .filter-title{
-    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 5rem;
+    font-size: 1.6rem;
+    background-color: #DFF2EB;
 }
 
-.filter-text-box{
-    display: flex;
-    flex-direction: row;
+.text-box {
+    width: 100%;
+    padding: 0.5rem;
+    border: 0;
+    box-sizing: border-box;
 }
+
+select{
+    width: auto;
+    padding: 1rem;
+    border: none;
+}
+/* 셀렉트 박스에서 플레이스 홀더처럼 표헌하기 */
+select option[value=""][disabled] {
+	display: none;
+}
+
+
+.filter-button-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.filter-button {
+    font-size: 1.6rem;
+    cursor: pointer;
+    height: 5rem;
+    border: none;
+    border-radius: 0.4rem;
+    font-family: 'SUIT Variable';
+    font-weight: bold;
+    color: white;
+}
+
+.secondary{
+    background-color: #7AB2D3;
+}
+
+.primary{
+    background-color: #4A628A;
+}
+
+
+/* 테이블 영역 시작 */
+main{
+    width: 100rem;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
+
+.main-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.main-button {
+    width: 10rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.4rem;
+    font-family: 'SUIT Variable';
+    font-weight: bold;
+    color: white;
+}
+
+.table-wrapper{
+    width: 100%;
+    font-size: 1.6rem;
+    border: 1px #B9E5E8 ;
+}
+
+thead{
+    color: white;
+    font-weight: bold;
+    background-color:#7AB2D3;
+}
+
+tbody{
+    background-color: white;
+}
+
+tr{
+    height: 4rem;
+}
+
+th, td{
+    vertical-align: middle;
+}
+
+td{
+    text-align: center;
+}
+
+table, th, td { border: 1px solid #B9E5E8; }
+table { border-collapse: collapse; }

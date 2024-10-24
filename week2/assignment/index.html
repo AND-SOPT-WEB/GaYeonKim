@@ -9,49 +9,64 @@
     <title>물결웹팟 관리 페이지</title>
 </head>
 <body>
-    <header clss="header">
+    <header class="header">
         <a href="#"><i class="fa-solid fa-bars"></i></a>
-        <h2>물결웹팟 파트원 관리 페이지</h2>
+        <h1>물결웹팟 파트원 관리 페이지</h1>
         <span>made by AND SOPT 메이커스팀장 김가연🌊🚀</span>
     </header>
     <section>
-        <div class="filter">
-            <div class="filter-text-box name">
-                <div class="filter-title">이름</div>
-                <input type="text" class="text-box">
+        <div class="filter-wrapper">
+            <div class="filter-searchbox">
+                <div class="filter-text-box name">
+                    <div class="filter-title">이름</div>
+                    <input type="text" class="text-box" placeholder="이름을 입력해주세요.">
+                </div>
+                <div class="filter-text-box english-name">
+                    <div class="filter-title">영문이름</div>
+                    <input type="text" class="text-box" placeholder="영문 이름을 입력해주세요.">
+                </div>
+                <div class="filter-text-box github">
+                    <div class="filter-title">Github</div>
+                    <input type="text" class="text-box" placeholder="Github ID를 입력해주세요.">
+                </div>
+                <div class="filter-text-box gender">
+                    <div class="filter-title">성별</div>
+                    <select name="gender" id="gender">
+                        <option value="" disabled selected>성별 선택</option>
+                        <option value="female">여자</option>
+                        <option value="male">남자</option>
+                    </select>
+                </div>
+                <div class="filter-text-box role">
+                    <div class="filter-title">역할</div>
+                    <select name="role" id="role">
+                        <option value="" disabled selected>역할 선택</option>
+                        <option value="OB">OB</option>
+                        <option value="YB">YB</option>
+                    </select>
+                </div>
+                <div class="filter-text-box week1">
+                    <div class="filter-title">1주차 금잔디조</div>
+                    <input type="text" class="text-box" placeholder="1주차 금잔디조를 입력해주세요(1~9).">
+                </div>
+                <div class="filter-text-box week2">
+                    <div class="filter-title">2주차 금잔디조</div>
+                    <input type="text" class="text-box" placeholder="2주차 금잔디조를 입력해주세요(1~9).">
+                </div>
             </div>
-            <div class="filter-text-box english-name">
-                <div class="filter-title">영문이름</div>
-                <input type="text" class="text-box">
+            <div class="filter-button-wrapper">
+                <button class="secondary filter-button" id="reset">초기화</button>
+                <button class="primary filter-button" id="search">검색</button>
             </div>
-            <div class="filter-text-box ">
-                <div class="filter-title">Github</div>
-                <input type="text" class="text-box">
-                <div class="filter-title">성별</div>
-                <input type="text" class="text-box">
-                <div class="filter-title">역할</div>
-                <input type="text" class="text-box">
-            </div>
-            <div class="filter-text-box ">
-                <div class="filter-title">1주차 금잔디조</div>
-                <input type="text" class="text-box">
-                <div class="filter-title">2주차 금잔디조</div>
-                <input type="text" class="text-box">
-            </div>
-            <div class="button-wrapper">
-                <button>초기화</button>
-                <button>검색</button>
-            </div>
-
-            
         </div>
-        <main>
-            <div class="button-wrapper">
-                <button>선택삭제</button>
-                <button>추가</button>
-            </div>
 
-            <table>
+        
+        <main>
+            <div class="main-button-wrapper">
+                <button class="secondary main-button" id="delete">선택삭제</button>
+                <button class="primary main-button" id="add">추가</button>
+            </div>
+            <table class="table-wrapper">
                 <thead>
                     <tr>
                         <th><input type="checkbox" id="checkbox" name="checkbox" /></th>
@@ -65,6 +80,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- 한 row에 들어가는 정보 값. 나중에 js 할 때 <tr>을 추가하는 식으로 해야됨됨 -->
                     <tr>
                         <td><input type="checkbox" id="checkbox" name="checkbox" /></td>
                         <td>김가연</td>
