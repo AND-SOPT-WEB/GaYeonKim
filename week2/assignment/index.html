@@ -69,7 +69,7 @@
             <table class="table-wrapper">
                 <thead>
                     <tr>
-                        <th><input type="checkbox" id="checkbox" name="checkbox" /></th>
+                        <th><input type="checkbox" name="checkbox" /></th>
                         <th>이름</th>
                         <th>영문이름</th>
                         <th>Github</th>
@@ -80,7 +80,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- 한 row에 들어가는 정보 값. 나중에 js 할 때 <tr>을 추가하는 식으로 해야됨됨 -->
+                    <!-- 한 row에 들어가는 정보 값. 나중에 js 할 때 <tr>을 추가하는 식으로 해야됨 -->
                     <tr>
                         <td><input type="checkbox" id="checkbox" name="checkbox" /></td>
                         <td>김가연</td>
@@ -97,5 +97,55 @@
     </section>
 
     <script type="module" src="admin.js"></script>
+
+    <!--모달 팝업-->
+    <div class="modal">
+        <div class="modal_popup">
+            <div class="modal-header">
+                <h3>새 멤버 추가</h3>
+                <button type="button" class="close-btn"><i class="fa-solid fa-x"></i></button>
+            </div>
+            <div class="modal-filter">
+                <div class="modal-text-box">
+                    <div class="modal-filter-title">이름</div>
+                    <input type="text" class="text-box" placeholder="이름을 입력해주세요.">
+                </div>
+                <div class="modal-text-box">
+                    <div class="modal-filter-title">영문이름</div>
+                    <input type="text" class="text-box" placeholder="영문 이름을 입력해주세요.">
+                </div>
+                <div class="modal-text-box">
+                    <div class="modal-filter-title">Github</div>
+                    <input type="text" class="text-box" placeholder="Github ID를 입력해주세요.">
+                </div>
+                <div class="modal-text-box gender">
+                    <div class="modal-filter-title">성별</div>
+                    <select name="gender" class="text-box">
+                        <option value="" disabled selected>성별 선택</option>
+                        <option value="female">여자</option>
+                        <option value="male">남자</option>
+                    </select>
+                </div>
+                <div class="modal-text-box role">
+                    <div class="modal-filter-title">역할</div>
+                    <select name="role" class="text-box">
+                        <option value="" disabled selected>역할 선택</option>
+                        <option value="OB">OB</option>
+                        <option value="YB">YB</option>
+                    </select>
+                </div>
+                <div class="modal-text-box">
+                    <div class="modal-filter-title">1주차 금잔디조</div>
+                    <input type="text" class="text-box" placeholder="1주차 금잔디조를 입력해주세요(1~9).">
+                </div>
+                <div class="modal-text-box">
+                    <div class="modal-filter-title">2주차 금잔디조</div>
+                    <input type="text" class="text-box" placeholder="2주차 금잔디조를 입력해주세요(1~9).">
+                </div>
+            </div>
+            <button class="secondary filter-button" id="add-member">추가</button>
+        </div>
+    </div>
+    <!--end 모달 팝업-->
 </body>
 </html>
