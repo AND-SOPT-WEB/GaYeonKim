@@ -125,6 +125,12 @@ addMemberBtn.addEventListener('click', () => {
 
     const lastID = members[members.length-1].id;
 
+    //만약, 하나라도 false인 값이 있다면 alert를 띄우고 함수를 종료함
+    if (!name || !englishName || !github || !gender || !role || !firstWeekGroup || !secondWeekGroup) {
+        alert('모든 항목을 입력해주세요 :)');
+        return;
+    }
+
     // 새 멤버 객체 생성
     const newMember = {
         id: lastID+1,
