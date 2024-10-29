@@ -24,10 +24,8 @@ const tableBody = document.querySelector('tbody');
 // 각 멤버 데이터를 표의 행으로 추가
 // 삼항 연산자 활용 : female이면 여자로, 아니면 남자로
 // 멤버 추가 됐을 때 다시 테이블 업데이트 해야하므로 렌더링이 필요함 -> 함수형으로 변경
-function renderTable() {
+function renderTable(members = getMembers()) {
     tableBody.innerHTML = ''; // 기존 테이블 내용을 초기화
-    const members = getMembers(); // 최신 멤버 데이터를 가져옴
-    
     members.forEach(member => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -143,8 +141,60 @@ addMemberBtn.addEventListener('click', () => {
     addMember(newMember);
 });
 
+//필터링 기능 구현
+
+//초기화 버튼 구현
+document.querySelector('#reset').addEventListener('click', function() {
+    document.querySelectorAll('.text-box').forEach(input => input.value = ''); // 텍스트 입력 필드 초기화
+    document.querySelectorAll('select').forEach(select => select.value = ''); // 선택 필드 초기화
+    renderTable(); //필터링 초기화
+});
 
 
+//필터링
+function filtering(){
+    const members = getMembers();
+    const nameFilter = document.querySelector('#filter-name').value;
+    const engNameFilter = document.querySelector('#filter-engName').value;
+    const githubIDFilter = document.querySelector('#filter-githubID').value;
+    const genderFilter = document.querySelector('#filter-gender').value;
+    const roleFilter = document.querySelector('#filter-role').value;
+    const firstWeekGroupFilter = document.querySelector('#filter-week1').value;
+    const secondWeekGroupFilter = document.querySelector('#filter-week2').value;
+
+    let filteredMembers = members;
+
+    // 변수에 값이 있을 시, 필터에 적힌 값과 멤버 배열에 담긴 값을 비교해서, filteredMembers로 반환한다!
+    if (nameFilter) {
+        filteredMembers = filteredMembers.filter(member => member.name === nameFilter);
+    }
+    if (engNameFilter) {
+        filteredMembers = filteredMembers.filter(member => member.englishName === engNameFilter);
+    }
+    if (githubIDFilter) {
+        filteredMembers = filteredMembers.filter(member => member.github == githubIDFilter);
+    }
+    if (genderFilter) {
+        filteredMembers = filteredMembers.filter(member => member.gender === genderFilter);
+    }
+    if (roleFilter) {
+        filteredMembers = filteredMembers.filter(member => member.role === roleFilter);
+    }
+    if (firstWeekGroupFilter) {
+        filteredMembers = filteredMembers.filter(member => member.firstWeekGroup == firstWeekGroupFilter);
+    }
+    if (secondWeekGroupFilter) {
+        filteredMembers = filteredMembers.filter(member => member.secondWeekGroup == secondWeekGroupFilter);
+    }
+    
+
+    console.log(filteredMembers);
+    // 필터링 결과를 테이블에 렌더링
+    renderTable(filteredMembers);
+}
+
+// 필터 버튼 클릭 시 필터링 적용
+document.querySelector('#search').addEventListener('click', filtering);
 
 
 
