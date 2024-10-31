@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import Timer from './components/Timer/Timer'
-import Game from './components/Game';
-import Ranking from './components/Ranking';
+import Game from './components/Game/Game';
+import Ranking from './components/Ranking/Ranking';
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -21,7 +21,7 @@ function App() {
           <button onClick={() => handleViewChange('game')}>게임</button>
           <button onClick={() => handleViewChange('ranking')}>랭킹</button>
         </div>
-        <div className='HeaderRignt'>
+        <div className='HeaderRight' style={{ display: view === 'game' ? 'block' : 'none' }} >
           <select name="level" id="level">
             <option value="level1">Level 1</option>
             <option value="level2">Level 2</option>

@@ -51,8 +51,38 @@ table {
 
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  font-size: 62.5%;
+  width: 100vw;
+  background-color: #C4DAD2;
 }
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #16423C;
+  padding: 1rem 6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.HeaderLeft{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 1.6rem;
+  color: white;
+}
+
+.HeaderRight{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+
+/* 
+  @description
+  : Game 내 화면
+*/
