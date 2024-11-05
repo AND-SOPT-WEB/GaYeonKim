@@ -1,17 +1,33 @@
 import { useState } from 'react'
 import styles from './Game.module.css';
+import Timer from '../Timer/Timer';
 
-const Game = () => {
-    const [count, setCount] = useState(1)
 
-    const clickTheNumber = (newCount) => {
-        setCount(newCount); // view 상태를 클릭한 버튼에 따라 변경
-        // console.log(`view state changed! ${view}`)
-      };
+//App에서 넘어오는 두 값, startGame과 stopGame
+const Game = ({startGame, stopGame}) => {
+
+
+    // const clickTheNumber = (newCount) => {
+    //     setCount(newCount); // view 상태를 클릭한 버튼에 따라 변경
+    //     // console.log(`view state changed! ${view}`)
+    //   };
+
+    const handleStartGame = () => {
+        startGame();
+    }
+
+    const handleStopGame = () => {
+        stopGame();
+    }
+
     return (
         <div className={styles.GameWrapper}>
-            <h1>다음 숫자 : {count} </h1>
+            {/* <h1>다음 숫자 : {count} </h1>
             <button onClick={() => clickTheNumber(count+1)}>click!</button>
+             */}
+            
+            <button onClick={handleStartGame}>Start Game</button>
+            <button onClick={handleStopGame}>End Game</button>
 
             <div className={styles.BtnWrapper}>
                 <div className={styles.GameBtn}>1</div>
