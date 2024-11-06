@@ -3,12 +3,11 @@ import styles from './Game.module.css';
 
 
 //App에서 넘어오는 두 값, startGame과 stopGame
-const Game = ({startGame, stopGame}) => {
+const Game = ({startGame, stopGame, playTime}) => {
     const [numbers, setNumbers] = useState([]);
     const [currentNumber, setCurrentNumber] = useState(1);
     const [isRunning, setIsRunning] = useState(false);
     const [availableNumbers, setAvailableNumbers] = useState([]);
-    const [playTime, setPlayTime] = useState(0);
 
     // const clickTheNumber = (newCount) => {
     //     setCount(newCount); // view 상태를 클릭한 버튼에 따라 변경
@@ -24,16 +23,11 @@ const Game = ({startGame, stopGame}) => {
     //랜덤으로 섞기
     const shuffleArray = (arr) => arr.sort(() => Math.random() - 0.5);
 
-    const handleTimeUpdate = (time) => {
-        setPlayTime(time);
-    };
-
     const resetGame = () => {
         setNumbers(shuffleArray([1, 2, 3, 4, 5, 6, 7, 8, 9]));
         setAvailableNumbers(shuffleArray([10, 11, 12, 13, 14, 15, 16, 17, 18]));
         setCurrentNumber(1);
         setIsRunning(false);
-        setPlayTime(0);
     };
 
     //어떤 숫자를 클릭하는지에 따라 컨트롤 하는 방식이 다름.
@@ -93,3 +87,7 @@ const Game = ({startGame, stopGame}) => {
 };
 
 export default Game;
+
+
+
+// 저장할 때 애초에 정렬해서 저장하는 방법이 있음.

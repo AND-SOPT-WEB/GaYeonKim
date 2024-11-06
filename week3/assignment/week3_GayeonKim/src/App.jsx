@@ -57,7 +57,7 @@ const handleTimeUpdate = (time) => {
             <option value="3">Level 3</option>
           </select>
           {/* 타이머로 타이머 돌아가는지랑, 설정된 시간 보내줘야함*/}
-          <Timer isRunning={isRunning} onTimeUpdate={handleTimeUpdate} />
+          <Timer isRunning={isRunning} onTimeUpdate={handleTimeUpdate} playTime={playTime} />
         </div>
       </header>
       <section>
@@ -65,6 +65,7 @@ const handleTimeUpdate = (time) => {
         {view === 'game' && <Game 
           startGame = {startGame}
           stopGame = {stopGame}
+          playTime={playTime}
         />}
         {view === 'ranking' && <Ranking />}
       </section>
