@@ -50,7 +50,7 @@ const handleTimeUpdate = (time) => {
           <button onClick={() => handleViewChange('game')}>게임</button>
           <button onClick={() => handleViewChange('ranking')}>랭킹</button>
         </div>
-        <div className='HeaderRight' style={{ display: view === 'game' ? 'block' : 'none' }} >
+        <div className='HeaderRight' style={{ display: view === 'game' ? 'flex' : 'none' }} >
           <select name="level" id="level">
             <option value="1">Level 1</option>
             <option value="2">Level 2</option>

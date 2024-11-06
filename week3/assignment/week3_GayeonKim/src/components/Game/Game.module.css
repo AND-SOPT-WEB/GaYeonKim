@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     padding: 3rem;
+    height: 100vh;
 }
 
 .BtnWrapper{
@@ -38,4 +39,9 @@
 .GameBtn:active {
     background-color: #45776A;
     transform: scale(0.95); /* 살짝 눌리는 효과 */
+}
+
+.GameHeader{
+    font-size: 1.6rem;
+    font-weight: bold;
 }

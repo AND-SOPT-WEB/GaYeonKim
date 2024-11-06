@@ -9,29 +9,24 @@ const Timer = ({isRunning, onTimeUpdate}) => {
         let interval;
 
         if (isRunning){
-            const startTime = Date.now() - time;
+            const startTime = Date.now(); //시작 시간 설정
             interval = setInterval(() => {
-                const playTime = (Date.now() - startTime) / 1000;
+                const playTime = (Date.now() - startTime) / 1000; 
                 setTime(playTime);
                 onTimeUpdate(playTime.toFixed(2));
-            }, 10);
-        } else if (!isRunning && time !== 0){
+            }, 10); //밀리초 단위로 계속 바꿔줌... 아 이거 어렵다 ㅠㅠ
+        } else{
             clearInterval(interval);
             setTime(0);
         }
 
-        return () => clearInterval(interval);
-    }, [isRunning]);
+        return () => clearInterval(interval); 
+
+    }, [isRunning]);  //isRunning에 대한 변경 감지 후 실행
 
     return (
-        <div>{time.toFixed(2)}</div>
+        <div className={styles.timer}>{time.toFixed(2)}</div>
     );
 };
-
-// // prop-types로 props 검증 추가
-// Timer.propTypes = {
-//     // icon: PropTypes.elementType.isRequired, // icon prop을 React 컴포넌트로 기대
-//     // link: PropTypes.string.isRequired       // link prop은 문자열로 기대
-//     };
 
 export default Timer;
