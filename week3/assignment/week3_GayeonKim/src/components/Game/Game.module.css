@@ -1,0 +1,47 @@
+.GameWrapper h1{
+    font-size: 2rem;
+}
+
+.GameWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    height: 100vh;
+}
+
+.BtnWrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    width: 16rem;
+    box-sizing: border-box;
+}
+
+.GameBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6A9C89;
+    height: 4rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.GameBtn:hover{
+    background-color: #16423C;
+    color: white;
+}
+
+
+.GameBtn:active {
+    background-color: #45776A;
+    transform: scale(0.95); /* 살짝 눌리는 효과 */
+}
+
+.GameHeader{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
