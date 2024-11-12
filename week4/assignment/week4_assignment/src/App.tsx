@@ -1,7 +1,7 @@
 // import { useState } from 'react'
+import { ThemeProvider } from "@emotion/react"
+import theme from './styles/theme'
 import GlobalStyles from './styles/GlobalStyle'
-import { ThemeProvider } from 'styled-components'
-import { theme } from './styles/theme'
 
 import './App.css'
 
@@ -11,14 +11,11 @@ import SignUp from './pages/SignUp'
 import MyPage from './pages/MyPage'
 
 
-
-
-
 function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
+      <GlobalStyles/>
       <BrowserRouter>
         <Routes>
           {/* 로그인 페이지 */}

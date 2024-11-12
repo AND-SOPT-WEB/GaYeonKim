@@ -1,8 +1,7 @@
-import 'styled-components';
 import { ColorsTypes } from './theme';
 
-declare module 'styled-components' {
-    export interface DefaultTheme {
+declare module '@emotion/react' {
+    export interface Theme {
         colors: ColorsTypes;
     }
 }
