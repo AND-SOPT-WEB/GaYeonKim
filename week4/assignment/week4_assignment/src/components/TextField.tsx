@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
 interface TextFieldProps {
-  label?: string; // 필드 상단에 표시할 레이블
   type?: 'text' | 'password';
   placeholder?: string;
+  value?: string; // 입력 필드 값
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; // 변경 핸들러
   error?: boolean; // 에러 상태
   hint?: string; // 힌트 메시지
   showToggleIcon?: boolean; // 비밀번호 가시성 토글 아이콘
@@ -26,7 +27,6 @@ const Input = styled.input<{ error?: boolean }>`
   border: 1px solid ${({ error, theme }) => (error ? theme.colors.error : theme.colors.gray)};
   border-radius: 0.5rem;
   outline: none;
-
   box-sizing: border-box;
 
   &:focus {
@@ -52,6 +52,8 @@ const Hint = styled.p<{ error?: boolean }>`
 const TextField: React.FC<TextFieldProps> = ({
   type = 'text',
   placeholder,
+  value,
+  onChange,
   error = false,
   hint,
   showToggleIcon = false,
@@ -68,6 +70,8 @@ const TextField: React.FC<TextFieldProps> = ({
         <Input
           type={type === 'password' && !isPasswordVisible ? 'password' : 'text'}
           placeholder={placeholder}
+          value={value}
+          onChange={onChange}
           error={error}
         />
         {showToggleIcon && type === 'password' && (

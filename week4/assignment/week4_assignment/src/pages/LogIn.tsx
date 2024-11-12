@@ -29,7 +29,7 @@ const StyledLink = styled(Link)`
     padding-top: 2rem;
     cursor: pointer;
     text-decoration: underline;
-    display: inline-block;
+    display: block;
 
     &:visited {
         color: ${({ theme }) => theme.colors.gray};  /* visited 상태에서도 동일한 색상 유지 */

@@ -3,8 +3,6 @@ import { ThemeProvider } from "@emotion/react"
 import theme from './styles/theme'
 import GlobalStyles from './styles/GlobalStyle'
 
-import './App.css'
-
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import LogIn from './pages/LogIn'
 import SignUp from './pages/SignUp'
