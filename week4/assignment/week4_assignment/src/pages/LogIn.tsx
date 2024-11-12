@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {useTheme} from "@emotion/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import MainBtn from "../components/MainBtn";
 import TextField from "../components/TextField";
@@ -45,6 +45,7 @@ const LogIn = () => {
     //상태 추가 -> 여기로 값을 받아서 api 호출
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
         try {
@@ -55,7 +56,9 @@ const LogIn = () => {
             const token = response.data.result.token;
             localStorage.setItem("authToken", token); // 토큰 저장
             console.log("로그인 성공!", response.data);
-            } catch (error) {
+            navigate("/mypage");
+            }
+            catch (error) {
             alert(`사용자 정보를 다시 확인해주세요.`)
             }
         }

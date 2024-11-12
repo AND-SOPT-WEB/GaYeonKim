@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {useTheme} from "@emotion/react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -86,6 +86,7 @@ const StyledLink = styled(Link)`
 
 const MyPage = () => {
     const [view, setView] = useState<string>('hobby'); // 일단 들어가자마자 보이는건 게임 state
+    const [hobby, setHobby] = useState<string>(''); // API에서 받아온 취미 정보를 저장할 상태
 
     const handleViewChange = (newView:string) => {
         setView(newView); // view 상태를 클릭한 버튼에 따라 변경
@@ -94,12 +95,21 @@ const MyPage = () => {
     const theme = useTheme();
 
     const getHobby = async () => {
-        try{
-            const response = await axios.get("http://211.188.53.75:8080/login"), {
-                
-            }
+        const token = localStorage.getItem("authToken"); // 토큰 불러오기
+        try {
+            const response = await axios.get("http://211.188.53.75:8080/user/my-hobby", {
+                headers: { token: token } // 'token'이라는 키로 헤더에 추가
+            });
+            console.log("취미 정보:", response.data);
+            setHobby(response.data.result.hobby); // 받아온 취미 정보를 상태에 저장
+        } catch (error) {
+            console.error("취미 정보 요청 실패", error);
         }
     }
+
+    useEffect(() => {
+        getHobby();
+    }, []);
 
     return (
         <div>
@@ -118,7 +128,7 @@ const MyPage = () => {
             <Container isVisible={view === "hobby"}>
                 <Title>취미</Title>
                 <SubTitle>나의 취미</SubTitle>
-                <StyledText>독서</StyledText>
+                <StyledText>{hobby}</StyledText>
                 <SubTitle>다른 사람들의 취미</SubTitle>
                 <TextField
                     type="text"
