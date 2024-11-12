@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {useTheme} from "@emotion/react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import MainBtn from "../components/MainBtn";
 import TextField from "../components/TextField";
@@ -91,6 +92,14 @@ const MyPage = () => {
       };
 
     const theme = useTheme();
+
+    const getHobby = async () => {
+        try{
+            const response = await axios.get("http://211.188.53.75:8080/login"), {
+                
+            }
+        }
+    }
 
     return (
         <div>

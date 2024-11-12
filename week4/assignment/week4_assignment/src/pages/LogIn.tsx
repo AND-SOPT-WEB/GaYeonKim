@@ -1,9 +1,12 @@
+import { useState } from "react";
 import {useTheme} from "@emotion/react";
 import { Link } from "react-router-dom";
 
 import MainBtn from "../components/MainBtn";
 import TextField from "../components/TextField";
 import styled from '@emotion/styled'
+
+import axios from "axios";
 
 
 //스타일
@@ -39,18 +42,41 @@ const StyledLink = styled(Link)`
 const LogIn = () => {
     const theme = useTheme();
 
+    //상태 추가 -> 여기로 값을 받아서 api 호출
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleLogin = async () => {
+        try {
+            const response = await axios.post("http://211.188.53.75:8080/login", {
+                username: username,
+                password: password,
+            });
+            const token = response.data.result.token;
+            localStorage.setItem("authToken", token); // 토큰 저장
+            console.log("로그인 성공!", response.data);
+            } catch (error) {
+            alert(`사용자 정보를 다시 확인해주세요.`)
+            }
+        }
+
     return (
         <Container>
             <Title>로그인</Title>
-            <TextField placeholder="아이디" />
+            <TextField 
+                placeholder="아이디" 
+                onChange={(e) => setUsername(e.target.value)} // 아이디 업데이트
+            />
             <TextField
                 type="password"
                 placeholder="비밀번호"
+                onChange={(e) => setPassword(e.target.value)} // 비밀번호 업데이트
             />
             <MainBtn 
                 color={theme.colors.primary_400}
                 hoverColor={theme.colors.primary_700}
                 activeColor={theme.colors.primary_700}
+                onClick={handleLogin}
             >
                 로그인
             </MainBtn>

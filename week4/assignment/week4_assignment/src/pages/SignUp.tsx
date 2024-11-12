@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import MainBtn from "../components/MainBtn";
 import TextField from "../components/TextField";
@@ -59,6 +61,8 @@ interface FormValues {
 
 const SignUp = () => {
     const theme = useTheme();
+    const navigate = useNavigate();
+
     const [step, setStep] = useState<number>(1);
     const [formValues, setFormValues] = useState<FormValues>({
         name: '',
@@ -82,6 +86,22 @@ const SignUp = () => {
         if (step === 3) return !!formValues.hobby;
         return false;
     };
+
+    const handlePostUser = async () => {
+        try{
+            const response = await axios.post("http://211.188.53.75:8080/user", {
+                username : formValues.name,
+                password : formValues.password,
+                hobby : formValues.hobby
+        });
+        const userNum = response.data.result.no;
+        alert(`회원가입에 성공하셨습니다. 회원번호는 ${userNum}입니다.`)
+        navigate("/"); 
+        } catch (error) {
+            alert(`예상치 못한 문제가 발생하였습니다. 관리자에게 문의해주세요.`)
+        }
+    }
+
 
     return (
         <div>
@@ -150,6 +170,7 @@ const SignUp = () => {
                     hoverColor={theme.colors.primary_700}
                     activeColor={theme.colors.primary_700}
                     active={isNextButtonActive(3)}
+                    onClick={handlePostUser}
                 >
                     회원가입
                 </MainBtn>
