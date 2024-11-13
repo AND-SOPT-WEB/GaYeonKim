@@ -59,7 +59,8 @@ const LogIn = () => {
             navigate("/mypage");
             }
             catch (error) {
-            alert(`사용자 정보를 다시 확인해주세요.`)
+                console.error("로그인 실패", error);
+                alert(`사용자 정보를 다시 확인해주세요.`)
             }
         }
 
