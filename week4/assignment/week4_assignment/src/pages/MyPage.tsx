@@ -63,7 +63,7 @@ const StyledText = styled.p<ContainerProps>`
   font-size: 1.8rem;
   color: ${({ theme }) => theme.colors.gray};
   margin-top: 1rem;
-  display: ${({ isVisible }) => (isVisible ? "block" : "none")}; 
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
 `;
 
 const HeaderRight = styled.div`
@@ -104,7 +104,6 @@ const MyPage = () => {
   const token = localStorage.getItem("authToken"); // 토큰 불러오기
   const navigate = useNavigate();
 
-
   const getMyHobby = async () => {
     try {
       const response = await axios.get(
@@ -115,7 +114,7 @@ const MyPage = () => {
       );
       console.log("취미 정보:", response.data);
       setHobby(response.data.result.hobby); // 받아온 취미 정보를 상태에 저장
-    } catch (error:any) {
+    } catch (error: any) {
       if (error.status === 401) {
         alert(`마이페이지는 로그인 후 접근 가능합니다.`);
         navigate("/");
@@ -139,7 +138,7 @@ const MyPage = () => {
       setUserHobby(response.data.result.hobby); // 받아온 취미 정보를 상태에 저장
       setPrintNum(userNum);
     } catch (error) {
-        alert("취미 정보를 불러오는데 실패했습니다.");
+      alert("취미 정보를 불러오는데 실패했습니다.");
       console.error("취미 정보 요청 실패", error);
     }
   };
@@ -155,6 +154,7 @@ const MyPage = () => {
         { headers: { token: token } }
       );
       console.log("내 정보 변경 완료", response.data);
+      alert("내 정보 변경 완료!");
     } catch (error) {
       console.error("정보 변경 실패", error);
       alert("정보 변경에 실패하였습니다. 다시 시도해주세요.");
@@ -162,9 +162,11 @@ const MyPage = () => {
   };
 
   const handleClickEdit = () => {
-    if (newPassword !== "" || newHobby !== "") {
-      postNewInformation();
+    if (newPassword === "" && newHobby === "") {
+      alert("빈칸을 확인해주세요.");
+      return;
     }
+    postNewInformation();
   };
 
   const deleteToken = () => {
